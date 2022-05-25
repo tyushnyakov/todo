@@ -1,0 +1,12 @@
+<form action="{% url 'add' %}" method="post">
+{% csrf_token %}
+<fieldset>
+    <legend><h2>TODO</h2></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <input type="text" name="todo_text" value="todo text">
+    <input type="date" name="todo_date">
+    <label>Add todo</label><br>
+</fieldset>
+<input type="submit" value="ADD">
+</form>
+<a href="{% url 'index' %}">index</a>
